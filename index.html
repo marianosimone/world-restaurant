@@ -449,7 +449,6 @@
               cuisineData.push(...selected.map((dish) => ({
                 title: dish.strMeal,
                 image: dish.strMealThumb,
-                description: "Popular regional dish",
                 link: `https://www.google.com/search?q=${encodeURIComponent(dish.strMeal + " recipe")}`
               })));
             }
