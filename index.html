@@ -17,28 +17,43 @@
       #board {
         background-color: #333;
         color: #fff;
-        padding: 20px;
-        font-size: 24px;
+        padding: 10px;
+        font-size: clamp(14px, 4vw, 24px); /* Dynamic font sizing */
         cursor: pointer;
         text-align: center;
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+        max-width: 100%;
+        box-sizing: border-box;
       }
+
       .cell {
-        width: 30px;
-        height: 40px;
+        flex: 0 1 24px;
+        height: 36px;
         background-color: #222;
-        margin: 0 2px;
+        margin: 0 1px;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         position: relative;
       }
+
       .cell.emoji {
-        width: 60px;
-        font-size: 36px;
+        flex: 0 1 45px;
+        font-size: clamp(20px, 6vw, 36px);
+      }
+
+      @media (max-width: 480px) {
+        .cell {
+          flex: 0 1 12px; /* Very compact cells for narrow screens */
+          height: 28px;
+          margin: 0 1px;
+        }
+        .cell.emoji {
+          flex: 0 1 32px;
+        }
       }
       .cell-content {
       }
